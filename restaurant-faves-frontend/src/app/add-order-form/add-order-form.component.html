@@ -1,0 +1,23 @@
+<!-- ngSubmit allows you to set a method to run when the submit button on the form is clicked
+<form (ngSubmit)="addOrder()">  -->
+
+
+<form>
+
+    <p>Description</p>
+    <input type="text"  (ngModel)="newOrder.description"/>
+
+    <p> Restaurant </p>
+    <input type="text" (ngModel)="newOrder.restaurant"/>
+
+    
+    <p>Rating</p>
+    <input type="number" min="1" max="5" (ngModel)="newOrder.rating"/>
+  
+
+    <p> Order Again? </p>
+    <input type="checkbox" (ngModel)="newOrder.orderAgain"/>
+
+    <button (click)="addOrder()"> Add New Order </button>
+
+</form>
