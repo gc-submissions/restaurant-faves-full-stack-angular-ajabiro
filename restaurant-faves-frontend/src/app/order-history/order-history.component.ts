@@ -22,16 +22,20 @@ export class OrderHistoryComponent implements OnInit {
         }
       )
     }
+  
     delete(id:number):void{
       this.orderAPI.deleteOrder(id).subscribe(
-        (result) => {
-          console.log('Items deleted at ' + id );
+        (result)=>{
+          console.log('Item deleted at ' + id);
           this.loadOrders();
         }
       );
+      
     }
-    
+
     addOrder(newOrder:Order){
+     // console.log("Heyas");
+      this.orders.push(newOrder);
       this.loadOrders();
     }
-}
+  }

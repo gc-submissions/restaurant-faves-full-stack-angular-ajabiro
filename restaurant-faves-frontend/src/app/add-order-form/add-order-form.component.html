@@ -2,22 +2,20 @@
 <form (ngSubmit)="addOrder()">  -->
 
 
-<form>
+
 
     <p>Description</p>
-    <input type="text"  (ngModel)="newOrder.description"/>
+    <input type="text"  [(ngModel)]="newOrder.description"/>
 
     <p> Restaurant </p>
-    <input type="text" (ngModel)="newOrder.restaurant"/>
+    <input type="text" [(ngModel)]="newOrder.restaurant"/>
 
     
     <p>Rating</p>
-    <input type="number" min="1" max="5" (ngModel)="newOrder.rating"/>
+    <input type="number" min="1" max="5" [(ngModel)]="newOrder.rating"/>
   
 
     <p> Order Again? </p>
-    <input type="checkbox" (ngModel)="newOrder.orderAgain"/>
+    <input type="checkbox" [(ngModel)]="newOrder.orderAgain"/>
 
     <button (click)="addOrder()"> Add New Order </button>
-
-</form>

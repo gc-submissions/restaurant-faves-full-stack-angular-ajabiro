@@ -16,22 +16,24 @@ export class RestaurantFavesService {
   constructor(private http: HttpClient) { }
 
 // service code looks similar regarless of backend 
-
-  getAllOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(`${this.baseURL}`);
-  };
-  //returning a single order
-  getOrder(id:number):Observable<Order>{
-    return this.http.get<Order>(this.baseURL +"/"+id);
-  }
-  createOrder(newOrder: Order): Observable<Order> {
-    // For POST, pass the body data as a second parameter after the URL
-    return this.http.post<Order>(`${this.baseURL}`, newOrder);
-  };
-
-  deleteOrder(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseURL}/${id}`);
-  };
+getAllOrders():Observable<Order[]>{
+  return this.http.get<Order[]> (this.baseURL); 
 }
 
+getOrder(id:number):Observable<Order>{
+  return this.http.get<Order>(this.baseURL + "/"+id);
+}
 
+deleteOrder(id:number):Observable<Object>{
+   return this.http.delete(this.baseURL+"/" +id);
+}
+
+// createOrder(newOrder:Order):Observable<Object>{
+//   return this.http.post(this.baseURL, newOrder);
+// }
+// }
+
+createOrder(newOrder:Order):Observable<Order>{
+  return this.http.post<Order>(this.baseURL, newOrder);
+  }
+}
